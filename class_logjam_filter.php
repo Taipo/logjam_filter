@@ -8,7 +8,7 @@ class Logjam_Filter {
         if ( empty( $user_agent ) ) $user_agent = strtolower( rawurldecode( urldecode( $_SERVER[ 'HTTP_USER_AGENT' ] ) ) );
         if ( false !== strpos( $user_agent, 'jndi' ) ) {
             if ( false !== strpos( $user_agent, 'jndi:ldap' ) ||
-                 false !== strpos( $user_agent, 'jndi:rmip' ) ||
+                 false !== strpos( $user_agent, 'jndi:rmi' ) ||
                  false !== strpos( $user_agent, 'jndi:ldaps' ) ||
                  false !== strpos( $user_agent, 'jndi:dns' ) ) {
                  return true;
@@ -25,7 +25,7 @@ class Logjam_Filter {
                 $list = array( '$', '{', '}', ':', '-' );
                 $flist = str_replace( $list, '', $user_agent );
                 if ( false !== strpos( $flist, 'ldap' ) ||
-                     false !== strpos( $flist, 'rmip' ) ||
+                     false !== strpos( $flist, 'rmi' ) ||
                      false !== strpos( $flist, 'ldaps' ) ||
                      false !== strpos( $flist, 'dns' ) ) {
                      return true;
