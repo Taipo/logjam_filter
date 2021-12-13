@@ -1,7 +1,7 @@
 <?php
 class Logjam_Filter {
     
-    public static function logjam_check( $user_agent = '' ): bool {
+    public static function logjam_check( $input = '' ): bool {
         # Attempts to exploit CVE-2021-44228
         # Standard
         # - ${jndi:ldap://,${jndi:rmi://,${jndi:ldaps://,${jndi:dns://
